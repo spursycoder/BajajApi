@@ -10,7 +10,7 @@ var mail="stephno2003@gmail.com"
 
 app.use(express.json())
 
-app.post('/hbfl',(req,res)=>{
+app.post('/bfhl',(req,res)=>{
     console.log(req.body)
     reqArray=req.body.data
     var odd_arr=[]
