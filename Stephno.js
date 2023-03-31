@@ -1,6 +1,8 @@
 const express=require('express')
 const app = express();
-const PORT=4000;
+const serverless=require("serverless-http");
+// const PORT=4000;
+const router=express.Router();
 
 var uid="aastle_stephno_09052003"
 var roll="12017933"
@@ -42,6 +44,10 @@ app.post('/hbfl',(req,res)=>{
     })
 })
 
-app.listen(PORT,()=>{
-    console.log("listening on "+PORT)
-})
+app.use('/.netlify/functions/api',router);
+
+// app.listen(PORT,()=>{
+//     console.log("listening on "+PORT)
+// })
+
+modules.exports.handler=serverless(app);
